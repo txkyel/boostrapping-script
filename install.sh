@@ -1,12 +1,15 @@
 #### Installing Qtile ####
 cd $HOME
 
+sudo apt install git neovim -y
 # Install dependencies
-sudo apt install pipx python3-cairocffi libpangocairo-1.0-0 git -y
+sudo apt install xserver-xorg xinit -y
+sudo apt install libpangocairo-1.0-0 -y
+sudo apt install python3-pip python3-xcffib python3-cairocffi
 
 # Install qtile and dependencies
-pipx install qtile
-pipx inject dbus-next qtile-extras
+pip install dbus-next --break-system-packages
+pip install qtile --break-system-packages
 
 # Xsessions Desktop file
 cat > ./temp << "EOF"
@@ -41,3 +44,5 @@ config config --local status.showUntrackedFiles no
 # Remove all conflicting changes
 # NOTE: you can "config stash apply" to apply the local version of the file
 config stash
+
+rm .gitignore
