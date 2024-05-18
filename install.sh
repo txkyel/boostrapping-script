@@ -1,7 +1,6 @@
-#### Installing Qtile ####
+#### INSTALL QTILE
 cd $HOME
 
-sudo apt install git neovim -y
 # Install dependencies
 sudo apt install xserver-xorg xinit -y
 sudo apt install libpangocairo-1.0-0 -y
@@ -27,7 +26,11 @@ sudo echo "Exec=$HOME/.local/bin/qtile start" | sudo tee -a /usr/share/xsessions
 rm ./temp
 
 
-#### Clone dotfiles ####
+### INSTALL TERMINAL + SHELL
+sudo apt install git neovim -y
+# TODO: Add install scripts
+
+#### INSTALL CONFIGS
 # Ignore repo configs
 echo ".dotfiles" >> .gitignore
 
