@@ -5,7 +5,7 @@ sudo apt install git neovim -y
 # Install dependencies
 sudo apt install xserver-xorg xinit -y
 sudo apt install libpangocairo-1.0-0 -y
-sudo apt install python3-pip python3-xcffib python3-cairocffi
+sudo apt install python3-pip python3-xcffib python3-cairocffi -y
 
 # Install qtile and dependencies
 pip install dbus-next --break-system-packages
@@ -27,22 +27,22 @@ sudo echo "Exec=$HOME/.local/bin/qtile start" | sudo tee -a /usr/share/xsessions
 rm ./temp
 
 
-
 #### Clone dotfiles ####
 # Ignore repo configs
 echo ".dotfiles" >> .gitignore
 
 # Clone dotfiles
-git clone --bare git@github.com:txkyel/dotfiles.git $HOME/.dotfiles
+git clone --bare https://github.com/txkyel/dotfiles.git $HOME/.dotfiles
 
 # Setup alias
-alias config="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+config="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
 # Ignore untracked files
-config config --local status.showUntrackedFiles no
+$config config --local status.showUntrackedFiles no
 
 # Remove all conflicting changes
+# TODO: Add script/alias for backing and restoring conflicting configs
 # NOTE: you can "config stash apply" to apply the local version of the file
-config stash
+$config stash
 
 rm .gitignore
