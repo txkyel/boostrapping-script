@@ -1,6 +1,9 @@
-#### INSTALL QTILE
 cd $HOME
 
+### INSTALL DEPENDENCIES
+sudo apt install git neovim -y
+
+### INSTALL QTILE
 # Install dependencies
 sudo apt install xserver-xorg xinit -y
 sudo apt install libpangocairo-1.0-0 -y
@@ -25,12 +28,7 @@ sudo echo "Exec=$HOME/.local/bin/qtile start" | sudo tee -a /usr/share/xsessions
 # Cleanup
 rm ./temp
 
-
-### INSTALL TERMINAL + SHELL
-sudo apt install git neovim -y
-# TODO: Add install scripts
-
-#### INSTALL CONFIGS
+### INSTALL CONFIGS
 # Ignore repo configs
 echo ".dotfiles" >> .gitignore
 
@@ -48,4 +46,18 @@ $config config --local status.showUntrackedFiles no
 # NOTE: you can "config stash apply" to apply the local version of the file
 $config stash
 
+# Cleanup
+unset config
 rm .gitignore
+
+### INSTALL SHELL
+sudo apt install zsh -y
+
+# Clone plugins into plugins dir
+zsh_plugins="$HOME/.config/zsh/plugins/"
+[ -d $zsh_plugins ] || mkdir -p $zsh_plugins
+cd $zsh_plugins
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+git clone https://github.com/jeffreytse/zsh-vi-mode.git
+
+### INSTALL TERMINAL EMULATOR
