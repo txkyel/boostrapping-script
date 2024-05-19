@@ -51,13 +51,12 @@ unset config
 rm .gitignore
 
 ### INSTALL SHELL
-sudo apt install zsh -y
+sudo apt install zsh zsh-syntax-highlighting -y
 
 # Clone plugins into plugins dir
 zsh_plugins="$HOME/.config/zsh/plugins/"
 [ -d $zsh_plugins ] || mkdir -p $zsh_plugins
 cd $zsh_plugins
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 git clone https://github.com/jeffreytse/zsh-vi-mode.git
 
 ### INSTALL TERMINAL EMULATOR
