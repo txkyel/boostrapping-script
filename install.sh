@@ -46,6 +46,10 @@ $config config --local status.showUntrackedFiles no
 # NOTE: you can "config stash apply" to apply the local version of the file
 $config stash
 
+# Remove any files that are not configs and prevent them from tracking
+$config update-index --assume-unchanged README.md
+rm README.md
+
 # Cleanup
 unset config
 rm .gitignore
