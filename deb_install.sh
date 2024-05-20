@@ -38,9 +38,9 @@ cd $HOME/.local/src/
 python3 -m venv qtile_venv
 cd qtile_venv/
 git clone https://github.com/qtile/qtile.git
-bin/pip install qtile/.
+./bin/pip install qtile/.
 [ -d "$HOME/.local/bin/" ] || mkdir -p "$HOME/.local/bin/"
-cp bin/qtile $HOME/.local/bin/
+cp ./bin/qtile $HOME/.local/bin/
 
 ### Build neovim
 # Install dependencies
@@ -52,11 +52,7 @@ sudo apt install -y \
     curl \
     build-essential
 
-cd $HOME/.local
-git clone https://github.com/neovim/neovim
-cd neovim
-git checkout stable
-make CMAKE_BUILD_TYPE=RelWithDebInfo
-cd build \
-    && cpack -G DEB \
-    && sudo dpkg -i nvim-linux64.deb
+cd $HOME/.local/src/
+git clone --branch stable --single-branch https://github.com/neovim/neovim
+cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
+cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
