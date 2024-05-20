@@ -40,7 +40,7 @@ cd qtile_venv/
 git clone https://github.com/qtile/qtile.git
 bin/pip install qtile/.
 [ -d "$HOME/.local/bin/" ] || mkdir -p "$HOME/.local/bin/"
-cp qtile $HOME/.local/bin/
+cp bin/qtile $HOME/.local/bin/
 
 ### Build neovim
 # Install dependencies
