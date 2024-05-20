@@ -25,13 +25,22 @@ rm .gitignore
 sudo apt install -y \
     xorg \
     xserver-xorg \
+    libpangocairo-1.0-0 \
     python3 \
     python3-pip \
     python3-venv \
-    python3-cffi \
+    python3-xcffib \
     python3-cairocffi \
-    python3-dbus-next \
-    libpangocairo-1.0-0
+    python3-dbus-next
+
+[ -d "$HOME/.local/src/" ] || mkdir -p "$HOME/.local/src/" 
+cd $HOME/.local/src/
+python3 -m venv qtile_venv
+cd qtile_venv/
+git clone https://github.com/qtile/qtile.git
+./bin/pip install qtile/.
+[ -d "$HOME/.local/bin/" ] || mkdir -p "$HOME/.local/bin/"
+cp ./bin/qtile $HOME/.local/bin/
 
 [ -d "$HOME/.local/src/" ] || mkdir -p "$HOME/.local/src/" 
 cd $HOME/.local/src/
