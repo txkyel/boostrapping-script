@@ -42,15 +42,6 @@ git clone https://github.com/qtile/qtile.git
 [ -d "$HOME/.local/bin/" ] || mkdir -p "$HOME/.local/bin/"
 cp ./bin/qtile $HOME/.local/bin/
 
-[ -d "$HOME/.local/src/" ] || mkdir -p "$HOME/.local/src/" 
-cd $HOME/.local/src/
-python3 -m venv qtile_venv
-cd qtile_venv/
-git clone https://github.com/qtile/qtile.git
-./bin/pip install qtile/.
-[ -d "$HOME/.local/bin/" ] || mkdir -p "$HOME/.local/bin/"
-cp ./bin/qtile $HOME/.local/bin/
-
 ### Build neovim
 # Install dependencies
 sudo apt install -y \
