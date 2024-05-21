@@ -2,8 +2,11 @@
 
 #### Bootstrapping script for minimal Debian install ###
 
-sudo apt install git alacritty zsh -y
+sudo apt install -y git alacritty zsh
 chsh -s $(which zsh)
+
+### Install sound
+sudo apt install -y pulseaudio alsa-utils pavucontrol
 
 ### Install dotfiles
 cd $HOME
