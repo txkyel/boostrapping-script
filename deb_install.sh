@@ -1,12 +1,9 @@
 #!/bin/sh
 
-#### Bootstrapping script for minimal Debian install ###
+#### Bootstrapping script for minimal Debian install ####
 
 sudo apt install -y git alacritty zsh
 chsh -s $(which zsh)
-
-### Install sound
-sudo apt install -y pulseaudio alsa-utils pavucontrol
 
 ### Install dotfiles
 cd $HOME
@@ -22,6 +19,14 @@ rm README.md
 # Cleanup
 unset config
 rm .gitignore
+
+### Install fonts
+sudo apt install -y fonts-noto-cjk-extra
+# Build font cache files to include nerd font
+fc-cache -fv
+
+### Install sound
+sudo apt install -y pulseaudio alsa-utils pavucontrol
 
 ### Build qtile
 # Install dependencies
