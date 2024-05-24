@@ -2,7 +2,7 @@
 
 #### Bootstrapping script for minimal Debian install ####
 
-sudo apt install -y git alacritty zsh
+sudo apt install -y git alacritty zsh rofi
 chsh -s $(which zsh)
 
 ### Install dotfiles
