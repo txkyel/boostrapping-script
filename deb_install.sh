@@ -28,6 +28,9 @@ fc-cache -fv
 ### Install sound
 sudo apt install -y pulseaudio alsa-utils pavucontrol
 
+### Install brightness management
+sudo apt install -y brightnessctl
+
 ### Build qtile
 # Install dependencies
 sudo apt install -y \
