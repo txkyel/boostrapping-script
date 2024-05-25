@@ -26,7 +26,7 @@ sudo apt install -y fonts-noto-cjk-extra
 fc-cache -fv
 
 ### Install sound
-sudo apt install -y pulseaudio alsa-utils pavucontrol
+sudo apt install -y pulseaudio alsa-utils pavucontrol playerctl
 
 ### Install brightness management
 sudo apt install -y brightnessctl
