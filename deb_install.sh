@@ -31,6 +31,9 @@ sudo apt install -y pulseaudio alsa-utils pavucontrol playerctl
 ### Install brightness management
 sudo apt install -y brightnessctl
 
+### Install clipboard and screenshots
+sudo apt install -y maim xclip
+
 ### Build qtile
 # Install dependencies
 sudo apt install -y \
