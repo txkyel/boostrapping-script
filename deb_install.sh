@@ -50,14 +50,7 @@ sudo apt install -y \
     python3-cairocffi \
     python3-dbus-next
 
-[ -d "$HOME/.local/src/" ] || mkdir -p "$HOME/.local/src/" 
-cd $HOME/.local/src/
-python3 -m venv qtile_venv
-cd qtile_venv/
-git clone https://github.com/qtile/qtile.git
-./bin/pip install qtile/.
-[ -d "$HOME/.local/bin/" ] || mkdir -p "$HOME/.local/bin/"
-cp ./bin/qtile $HOME/.local/bin/
+pip install dbus-next qtile --break-system-packages
 
 ### Build neovim
 # Install dependencies
