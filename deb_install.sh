@@ -34,6 +34,9 @@ sudo apt install -y brightnessctl
 ### Install clipboard and screenshots
 sudo apt install -y maim xclip
 
+### Install notification server
+sudo apt install -y dunst libnotify-bin
+
 ### Build qtile
 # Install dependencies
 sudo apt install -y \
