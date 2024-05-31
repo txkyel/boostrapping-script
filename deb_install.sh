@@ -37,6 +37,9 @@ sudo apt install -y maim xclip
 ### Install notification server
 sudo apt install -y dunst libnotify-bin
 
+### Install compositor
+sudo apt install -y picom
+
 ### Build qtile
 # Install dependencies
 sudo apt install -y \
