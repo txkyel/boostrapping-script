@@ -50,7 +50,7 @@ sudo apt install -y \
     python3-cairocffi \
     python3-dbus-next
 
-pip install dbus-next iwlib qtile --break-system-packages
+pip install dbus-next iwlib psutil qtile --break-system-packages
 
 ### Build neovim
 # Install dependencies
